@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import '../css/ChoiceList.css';
+import '../css/RecipeCard.css';
 
 
 class RecipeCard extends Component {
@@ -32,11 +30,13 @@ class RecipeCard extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card">
                 <p>{this.props.Title}</p>
-                <button onClick={this.innerHandlePlus}>+</button>
-                <button onClick={this.innerHandleMinus}>-</button>
-                <p>{this.props.Number}</p>
+                {/*<div className="counterSection">*/}
+                    <button className="pushButton" onClick={this.innerHandlePlus}>+</button>
+                    <p className="counterNumber">{this.props.Number}</p>
+                    <button className="pushButton" onClick={this.innerHandleMinus}>-</button>
+                {/*</div>*/}
             </div>
         );
     }

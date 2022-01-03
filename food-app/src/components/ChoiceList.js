@@ -83,50 +83,12 @@ class ChoiceList extends Component {
                         />
                     )}
                 </React.Fragment>
-                <div>
-                    <button onClick={this.sendChoicesBack}>submit</button>
+                <div className="footer">
+                    <p></p>
+                    <button className="submitButton" onClick={this.sendChoicesBack}>submit</button>
                 </div>
             </div>
             );
-        // if (this.props.LoginStatus == false && this.state.loadingStatus == false &&
-        //     this.state.loginError === false) {
-        //     return (
-        //         <form className="login" onSubmit={this.submitLogin}>
-        //             <h1 className="login-title">Login</h1>
-        //             <input type="text" className="login-input" placeholder="Email Address" autoFocus onChange={this.handleEmailChange}
-        //                    value={this.state.email} />
-        //             <input type="password" className="login-input" placeholder="Password" onChange={this.handlePasswordChange}
-        //                    value={this.state.password} />
-        //             <input type="submit" value="Lets Go" className="login-button" />
-        //         </form>
-        //     );
-        // }
-        // else if (this.props.LoginStatus === false && this.state.loadingStatus === true &&
-        //     this.state.loginError === false) {
-        //
-        //     return (
-        //         <form className="login" onSubmit={this.submitLogin}>
-        //             <h1 className="login-title">Logging in</h1>
-        //             <img src={logo} />
-        //         </form>
-        //     );
-        // } else if (this.props.LoginStatus === false && this.state.loadingStatus === false &&
-        //     this.state.loginError === true) {
-        //     return (
-        //         <form className="login" onSubmit={this.submitLogin}>
-        //             <h1 className="login-title">There's an error with the login! Please refresh to try again</h1>
-        //             <h1 className="login-title">{this.loginErrorMessage}</h1>
-        //         </form>
-        //     )
-        // } else {
-        //     return (
-        //         <React.Fragment>
-        //             <h1 className="loggedInTitle">Welcome!</h1>
-        //             <h1 className="loggedInTitle">{this.props.UserProfile["firstName"] + " " + this.props.UserProfile["secondName"]}</h1>
-        //             <Link className="quizesEnterButton" to={"/quizes"}>Check Out Your Tests!</Link>
-        //         </React.Fragment>
-        //     )
-        // }
     }
 
 }

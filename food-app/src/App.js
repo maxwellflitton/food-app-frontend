@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ChoiceList from "./components/ChoiceList";
+import "./css/home.css"
 
 import {
   BrowserRouter,
@@ -45,8 +46,13 @@ class App extends Component {
     if (this.state.calculated === false) {
       return (
           <BrowserRouter>
+            {/*<head>*/}
+            {/*  <meta charSet="UTF-8"/>*/}
+            {/*  <meta name="viewpoint" content="width=device-width, initial-scale=1.0"/>*/}
+            {/*  <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>*/}
+            {/*</head>*/}
             <div className="App">
-              <p>Food app</p>
+              <p className="title">Food Choices</p>
               <ChoiceList
                   Choices={this.state.recipesAvailable}
                   HandleChoices={this.handlePassChoices}
@@ -59,10 +65,10 @@ class App extends Component {
       return (
           <BrowserRouter>
             <div className="App">
-              <p>Food app</p>
+              <p className="title">Shopping List</p>
               <React.Fragment>
                 {this.state.shoppingList.map((ingredient) =>
-                    <p>{ingredient}</p>
+                    <p className="card">{ingredient}</p>
                 )}
               </React.Fragment>
             </div>
