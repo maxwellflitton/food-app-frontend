@@ -13,7 +13,7 @@ class ChoiceList extends Component {
           recipes: props.Choices,
           choices: {}
       }
-      // this.handleMinus = this.handleMinus.bind(this);
+      this.sendChoicesBack = this.sendChoicesBack.bind(this);
     }
 
     handleMinus = (data) => {
@@ -59,9 +59,15 @@ class ChoiceList extends Component {
     }
 
     sendChoicesBack() {
-        // TODO => loop through map getting counts
-        // TODO => append these to a buffer
-        // TODO => send to the app which will make the call
+        let buffer = [];
+        for (const [key, value] of Object.entries(this.state.choices)) {
+            let recipe_label = key.split(' ').join('_');
+
+            for (var i = 0; i < value; i++) {
+                buffer.push(recipe_label);
+            }
+        }
+        this.props.PassChoices(buffer);
     }
 
     render() {
@@ -69,7 +75,6 @@ class ChoiceList extends Component {
             <div>
                 <React.Fragment>
                     {this.state.recipes.map( (recipe) =>
-                        // TODO => create a component
                         <RecipeCard
                             Title={recipe}
                             Number={this.processChoiceCount(this.state.choices[recipe])}
@@ -79,7 +84,7 @@ class ChoiceList extends Component {
                     )}
                 </React.Fragment>
                 <div>
-                    <button>submit</button>
+                    <button onClick={this.sendChoicesBack}>submit</button>
                 </div>
             </div>
             );
